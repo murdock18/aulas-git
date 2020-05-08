@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div>
+            <h3>1)	Dado um array N de entrada, criei uma função que remova os elementos repetidos
+                e retorne o array sem repetição.</h3>
+            <b>function duplicate(N) {}</b>
+
+            <pre>Ex: // N =  [1,2,3,4,5,1,2,3,4,5] => Retorne [1,2,3,4,5]</pre>
+
+        </div>
+
+        <script type="text/javascript">
+            // Definindo a variavel n
+            n = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+            console.log(n); //exibe no console
+
+            function inArray(needle="", haystack=[]) {
+                var length = haystack.length;
+                for (var i = 0; i < length; i++) {
+                    if (typeof haystack[i] == 'object') {
+                        if (arrayCompare(haystack[i], needle))
+                            return true;
+                    } else {
+                        if (haystack[i] == needle)
+                            return true;
+                    }
+                }
+                return false;
+            }
+
+            function duplicate(data) {
+                var retornoEsperado=[];
+                for (i = 0; i < data.length; i++) {
+                    //console.log(data[i]);
+                    if (!inArray(data[i], retornoEsperado)) {
+                        retornoEsperado.push(data[i]);
+                    }
+                }
+                return retornoEsperado;
+            }
+
+            console.log(duplicate(n));
+
+        </script>
+    </body>
+</html>
